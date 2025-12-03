@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Pixelify+Sans:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Pixelify+Sans:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+@import "@heroui/styles"; 
+
+@theme {
+  --color-primary-50: #eff8ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #008DD5;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+  --color-primary-950: #172554;
+
+  --color-secondary-50: #f9fafb;
+  --color-secondary-100: #f3f4f6;
+  --color-secondary-200: #e5e7eb;
+  --color-secondary-300: #d1d5db;
+  --color-secondary-400: #9ca3af;
+  --color-secondary-500: #6b7280;
+  --color-secondary-600: #08090A;
+  --color-secondary-700: #070708;
+  --color-secondary-800: #060607;
+  --color-secondary-900: #050506;
+  --color-secondary-950: #040405;
+
+  --color-background: #F4FAFF;
+
+  --font-family-display: 'DM Sans', sans-serif;
+  --font-family-code: 'Google Sans Code', monospace;
+  --font-family-pixel: 'Pixelify Sans', sans-serif;
+  --font-family-body: 'Roboto', sans-serif;
+}
+body {
+  @apply font-family-display box-border
+}
+
+
+.card {
+  @apply shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] border-2 border-secondary-100 p-4
+}
+
+.card-rounded {
+  @apply shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] border border-secondary-100 rounded-xl p-4
+}
+
+.shadow-1 {
+  @apply shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]
+}
+
+.gradient-1 {
+  background: #008DD5;
+  background: linear-gradient(269deg,rgba(0, 141, 213, 1) 25%, rgba(59, 130, 246, 1) 100%);
+}
+
+.center-children {
+  @apply flex justify-center items-center
+}
+
+.button:active {
+  transform: scale(0.98);
+  @apply shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]
+}
