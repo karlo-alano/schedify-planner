@@ -1,25 +1,45 @@
-
+//App
 import './App.css'
-import { Routes, Route } from 'react-router-dom'
+
+//Imports
+import { Routes, Route, useLocation } from 'react-router-dom'
+
+
+//Views
 import Home from './views/Home'
 import Calendar from './views/Calendar'
+import Hero from './views/Hero'
+import Signup from './views/Signup'
+import Events from './views/Events'
 
+//Components
 import Navbar from './components/Navbar'
 
 function App() {
+  const location = useLocation();
+
+  const hideNavbarOnRoutes = ['/hero','/signup'];
+  const shouldHideNavbar = hideNavbarOnRoutes.includes(location.pathname);
+
+
   return (
     <>
-      <main className='max-h-screen w-screen flex flex-col'>
+      <main className='h-screen w-screen flex flex-col overflow-hidden'>
         <section className='flex-1 overflow-y-scroll'>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/calendar" element={<Calendar />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/hero" element={<Hero />} />
+            <Route path="/signup" element={<Signup />} />
           </Routes>
         </section>
-        <section className='min-h-16 w-full'>
-          <Navbar />
-        </section>
+        {!shouldHideNavbar && (
+          <section className='min-h-16 w-full'>
+            <Navbar />
+          </section>
+        )}
       </main>
     </>
   )

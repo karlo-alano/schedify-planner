@@ -21,7 +21,7 @@ export default function Navbar() {
   }
 
   return (
-    <main className="w-full h-full bg-white border-t border-gray-200 p-2">
+    <main className="w-full h-full bg-white border-t border-gray-200 p-2 rounded-t-3xl">
       <ul className="flex gap-4 items-center h-full">
         {navItems.map(({ icon: Icon, label, path, color, strokeWidth }) => {
           const active = isActive(path)
@@ -29,7 +29,7 @@ export default function Navbar() {
           return (
             <li 
               key={label}
-              className={`flex-1 flex flex-col items-center gap-1 cursor-pointer rounded-xl p-2 transition-all duration-300 ease-in-out transform ${
+              className={`flex-1 flex flex-col items-center gap-1 cursor-pointer rounded-3xl p-2 transition-all duration-300 ease-in-out transform ${
                 active 
                   ? 'bg-primary-100 text-primary-700 shadow-sm scale-105' 
                   : 'text-gray-600 hover:text-primary-600 hover:bg-gray-50 hover:scale-102'

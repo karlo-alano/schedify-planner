@@ -6,11 +6,11 @@ import Planned from "../components/Home/Planned"
 export default function Home() {
     return(
         <main className="h-full w-screen bg-slate-100">
-            <section className="gradient-1 h-[25%] p-4 rounded-b-3xl">
+            <section className="gradient-1 h-[20%] p-4 rounded-b-3xl">
                 <h1 className="text-4xl font-bold text-accent-foreground">Schedify</h1>
                 <Search />
             </section>
-            <section className="h-[60%] w-full p-4 flex flex-col  overflow-y-scroll">
+            <section className="h-[80%] w-full p-4 flex flex-col  overflow-y-scroll">
                 <div className='bg-white card min-h-40 rounded-t-2xl rounded-b-none'>
                     <h1 className="text-xl font-bold text-secondary-600 border">Upcoming</h1>
                     <Upcoming />

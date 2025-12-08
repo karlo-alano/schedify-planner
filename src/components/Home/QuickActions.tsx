@@ -1,4 +1,13 @@
+import { useNavigate } from "react-router-dom"
+
 export default function QuickActions() {
+    const navigate = useNavigate();
+
+    const goToCalendar = () => {
+        navigate('/calendar')
+    }
+
+
     return(
         <>
            <section className="w-full min-h-25 flex gap-2">
@@ -11,7 +20,8 @@ export default function QuickActions() {
                     </div>
                 </div>
                 <div className="w-[50%] h-25">
-                    <div className="w-full h-full bg-blue-100 rounded-2xl font-extrabold text-primary-500 center-children flex-col shadow-1 button">
+                    <div className="w-full h-full bg-blue-100 rounded-2xl font-extrabold text-primary-500 center-children flex-col shadow-1 button"
+                    onClick={goToCalendar}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-10">
                             <path fillRule="evenodd" d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z" clipRule="evenodd" />
                         </svg>
