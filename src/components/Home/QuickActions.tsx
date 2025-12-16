@@ -7,12 +7,17 @@ export default function QuickActions() {
         navigate('/calendar')
     }
 
+    const goToCreate = () => {
+        navigate('/create')
+    }
+
 
     return(
         <>
            <section className="w-full min-h-25 flex gap-2">
                 <div className="w-[50%] h-25">
-                    <div className="w-full h-full gradient-1 rounded-2xl font-extrabold text-white center-children flex-col shadow-1 button">
+                    <div className="w-full h-full gradient-1 rounded-2xl font-extrabold text-white center-children flex-col shadow-1 button"
+                    onClick={goToCreate}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-10">
                             <path fillRule="evenodd" d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z" clipRule="evenodd" />
                         </svg>

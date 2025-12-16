@@ -11,6 +11,8 @@ import Calendar from './views/Calendar'
 import Hero from './views/Hero'
 import Signup from './views/Signup'
 import Events from './views/Events'
+import Create from './views/Create'
+import Profile from './views/Profile'
 
 //Components
 import Navbar from './components/Navbar'
@@ -33,6 +35,8 @@ function App() {
             <Route path="/events" element={<Events />} />
             <Route path="/hero" element={<Hero />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/create" element={<Create />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </section>
         {!shouldHideNavbar && (
