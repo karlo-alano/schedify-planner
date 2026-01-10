@@ -7,10 +7,10 @@ export default function Home() {
     return(
         <main className="h-full w-screen bg-slate-100" >
             <section className="gradient-1 h-[20%] p-4 rounded-b-3xl ">
-                <h1 className="text-4xl font-bold text-accent-foreground animate-enter" style={{ "--delay": "0s" }}>Schedify</h1>
+                <h1 className="text-4xl font-bold text-accent-foreground animate-enter" style={{ "--delay": "0s" } as React.CSSProperties}>Schedify</h1>
                 <Search />
             </section>
-            <section className="h-[80%] w-full p-4 flex flex-col  overflow-y-scroll animate-enter" style={{ "--delay": "0.2s" }}>
+            <section className="h-[80%] w-full p-4 flex flex-col  overflow-y-scroll animate-enter" style={{ "--delay": "0.2s" } as React.CSSProperties}>
                 <div className="bg-white card min-h-40 rounded-t-2xl rounded-b-none border-b-0 ">
                     <h1 className="text-xl font-bold text-secondary-600">Upcoming</h1>
                     <Upcoming />
