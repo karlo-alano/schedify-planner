@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { getEventsByUserId, Event } from '../../scripts/eventStore';
+import { getEventsByUserId } from '../../scripts/eventStore';
+import type { Event } from '../../scripts/eventStore';
 import { getCurrentUser } from '../../scripts/userStore';
 
 export default function Upcoming() {
@@ -28,7 +29,7 @@ export default function Upcoming() {
                     // Assign the events array to eventData
                     setEventData(data || []);
                 }
-            } catch (err) {
+            } catch {
                 setError('Failed to fetch events');
             } finally {
                 setLoading(false);
