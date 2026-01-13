@@ -15,9 +15,11 @@ export default function Home() {
                     <h1 className="text-xl font-bold text-secondary-600">Upcoming</h1>
                     <Upcoming />
                 </div>
-                <div className='bg-white card min-h-40 rounded-none border-b-0 border-t-0'>
-                    <h1 className="text-xl font-bold text-secondary-600">Planning</h1>
-                    <Planned />
+                <div className='bg-white card min-h-40 rounded-none border-b-0 border-t-0 flex flex-col'>
+                    <h1 className="text-xl font-bold text-secondary-600 mb-2">Planning</h1>
+                    <div className="flex-1 overflow-y-auto">
+                        <Planned />
+                    </div>
                 </div>
                 <div className='bg-white card min-h-40 rounded-b-2xl rounded-t-none border-t-0'>
                     <h1 className="text-xl font-bold text-secondary-600">Quick Actions</h1>
