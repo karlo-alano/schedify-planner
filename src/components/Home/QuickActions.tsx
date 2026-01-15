@@ -14,7 +14,7 @@ export default function QuickActions() {
 
     return(
         <>
-           <section className="w-full min-h-25 flex gap-2">
+           <section className="w-full md:w-[80%] min-h-25 flex gap-2">
                 <div className="w-[50%] h-25">
                     <div className="w-full h-full gradient-1 rounded-2xl font-extrabold text-white center-children flex-col shadow-1 button"
                     onClick={goToCreate}>

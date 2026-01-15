@@ -8,6 +8,7 @@ export interface Event {
   event_date: string; // Date in YYYY-MM-DD format
   event_time: string; // Time in HH:MM:SS format
   event_description?: string;
+  event_picture?: string;
   user_id: string;
 }
 
@@ -16,6 +17,7 @@ export interface CreateEventData {
   event_date: string;
   event_time: string;
   event_description?: string;
+  event_picture?: string;
   user_id: string;
 }
 
@@ -24,6 +26,7 @@ export interface UpdateEventData {
   event_date?: string;
   event_time?: string;
   event_description?: string;
+  event_picture?: string;
 }
 
 // Database connection check
@@ -210,5 +213,32 @@ export async function deleteEventsByUserId(userId: string): Promise<{ success: b
   } catch (error) {
     console.error('Unexpected error deleting user events:', error);
     return { success: false, error: error instanceof Error ? error.message : 'Unknown error occurred' };
+  }
+}
+
+// Upload event image to Supabase Storage
+export async function uploadEventImage(file: File, eventId: string): Promise<{ url: string | null; error: string | null }> {
+  try {
+    const fileExt = file.name.split('.').pop();
+    const fileName = `${eventId}_${Date.now()}.${fileExt}`;
+
+    const { error } = await supabase.storage
+      .from('events_pictures') // Make sure this bucket exists in your Supabase dashboard
+      .upload(fileName, file);
+
+    if (error) {
+      console.error('Error uploading image:', error);
+      return { url: null, error: error.message };
+    }
+
+    // Get the public URL
+    const { data: urlData } = supabase.storage
+      .from('events_pictures')
+      .getPublicUrl(fileName);
+
+    return { url: urlData.publicUrl, error: null };
+  } catch (error) {
+    console.error('Unexpected error uploading image:', error);
+    return { url: null, error: error instanceof Error ? error.message : 'Upload failed' };
   }
 }
